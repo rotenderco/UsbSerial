@@ -9,8 +9,8 @@ import android.content.IntentFilter;
 import android.hardware.usb.UsbDevice;
 import android.hardware.usb.UsbDeviceConnection;
 import android.hardware.usb.UsbManager;
+import android.os.Build;
 
-import com.annimon.stream.Optional;
 import com.annimon.stream.Stream;
 import com.felhr.utils.Utils;
 
@@ -152,7 +152,7 @@ public class SerialPortBuilder {
     }
 
     private PendingUsbPermission createUsbPermission(Context context, UsbDeviceStatus usbDeviceStatus){
-        PendingIntent mPendingIntent = PendingIntent.getBroadcast(context, 0, new Intent(ACTION_USB_PERMISSION), 0);
+        PendingIntent mPendingIntent = PendingIntent.getBroadcast(context, 0, new Intent(ACTION_USB_PERMISSION), PendingIntent.FLAG_IMMUTABLE);
         PendingUsbPermission pendingUsbPermission = new PendingUsbPermission();
         pendingUsbPermission.pendingIntent = mPendingIntent;
         pendingUsbPermission.usbDeviceStatus = usbDeviceStatus;
