@@ -1,6 +1,12 @@
 CHANGELOG
 =========
 
+Release 6.2.0
+--------------------------------------
+- Compatible with SDK 31+
+- Upgrade MIN_SDK_VERSION to 26
+- Upgrade TARGET_SDK_VERSION/SDK_VERSION to 34
+
 Release 6.1.0
 --------------------------------------
 - Added 1228800 and 2000000 baud rates to CH34xx driver.
