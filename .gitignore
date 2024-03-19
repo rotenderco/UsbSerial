@@ -25,6 +25,8 @@ local.properties
 .idea/
 *.prefs
 
+*.hprof
+
 # Gradle
 build/
 .gradle

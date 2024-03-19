@@ -21,12 +21,12 @@ android {
         consumerProguardFiles "consumer-rules.pro"
     }
 
-    task deleteJar(type: Delete) {
+    tasks.register('deleteJar', Delete) {
         delete "libs/${artifact}"
     }
 
     //noinspection GroovyAssignabilityCheck
-    task createJar(type: org.gradle.api.tasks.Copy) {
+    tasks.register('createJar', Copy) {
         from('build/intermediates/bundles/release/')
         into('libs/')
         include('classes.jar')
@@ -49,8 +49,8 @@ dependencies {
     implementation 'com.annimon:stream:1.2.2'
     implementation 'com.squareup.okio:okio:3.3.0'
 
-    implementation 'androidx.appcompat:appcompat:1.0.0'
+    implementation 'androidx.appcompat:appcompat:1.6.1'
     testImplementation 'junit:junit:4.13.2'
-    androidTestImplementation 'androidx.test.ext:junit:1.1.1'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.0'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
 }
